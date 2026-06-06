@@ -1,5 +1,7 @@
 # Opengram
 
+*Читать на других языках: [English](README.en.md)*
+
 Opengram — это самостоятельный сервер Telegram, написанный на C# (.NET 9). Проект является форком [mytelegram](https://github.com/loyldg/mytelegram) и реализует серверную часть API Telegram (MTProto), которую можно развернуть на собственной инфраструктуре.
 Наш телеграм канал: https://t.me/opengrame
 
@@ -62,6 +64,15 @@ Opengram — это самостоятельный сервер Telegram, нап
 4. Запустите сервисы:
 
    ```bash
+   docker compose up -d
+   ```
+
+   Часть сервисов (в том числе `messenger-query-server`) собирается локально из исходников,
+   а не скачивается из реестра, поэтому `docker login` не требуется. При первом запуске
+   образы соберутся автоматически. Чтобы пересобрать их вручную:
+
+   ```bash
+   docker compose build
    docker compose up -d
    ```
 
