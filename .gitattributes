@@ -1,0 +1,25 @@
+# Enforce LF for everything that runs on the Linux server / in containers,
+# so a clone on the VPS never gets CRLF (which breaks bash + some Docker steps).
+*.sh            text eol=lf
+*.bash          text eol=lf
+Dockerfile      text eol=lf
+Dockerfile-*    text eol=lf
+*.Dockerfile    text eol=lf
+*.yml           text eol=lf
+*.yaml          text eol=lf
+gradlew         text eol=lf
+docker/compose/init-*.js   text eol=lf
+docker/compose/*.sh        text eol=lf
+
+# Windows-only helper scripts keep CRLF
+*.bat           text eol=crlf
+*.cmd           text eol=crlf
+*.ps1           text eol=crlf
+
+# Don't touch binaries
+*.png  binary
+*.jpg  binary
+*.tgs  binary
+*.webp binary
+*.pem  -text
+*.key  -text

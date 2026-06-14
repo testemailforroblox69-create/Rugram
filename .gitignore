@@ -354,6 +354,17 @@ MigrationBackup/
 .ionide/
 
 # --- Project-specific secrets and local artifacts ---
+# Real env files (NEVER commit) — only the .env.example templates are tracked
+.env
+**/.env
+*.env.local
+!.env.example
+!**/.env.example
+# Backups of env/config
+*.bak
+# Runtime data volumes (mongo/redis/rabbitmq/minio/uploads)
+docker/compose/data/
+**/data/
 # Приватные ключи и сертификаты
 *.pem
 *.key
