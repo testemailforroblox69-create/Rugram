@@ -192,8 +192,8 @@ services:
       # App__Servers__4__Ip: ${App__Servers__4__Ip}
       # App__Servers__4__Ipv6: ${App__Servers__4__Ipv6}
       App__Servers__4__Port: ${App__Servers__4__Port}
-      # App__Servers__4__Ssl: ${App__Servers__4__Ssl}
-      # App__Servers__4__CertPemFilePath: ${App__Servers__4__CertPemFilePath}
+      App__Servers__4__Ssl: ${App__Servers__4__Ssl}
+      App__Servers__4__CertPemFilePath: ${App__Servers__4__CertPemFilePath}
       # App__Servers__4__KeyPemFilePath: ${App__Servers__4__KeyPemFilePath}
       # App__Servers__4__EnableProxyProtocolV2: ${App__Servers__4__EnableProxyProtocolV2}
       # App__Servers__4__MediaOnly: ${App__Servers__4__MediaOnly}

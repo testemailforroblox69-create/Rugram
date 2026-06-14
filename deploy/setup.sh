@@ -49,6 +49,9 @@ if [ ! -f "$SECRETS_DIR/rsa_private.pem" ]; then
   openssl rsa -in "$SECRETS_DIR/rsa_private.pem" -traditional -out "$SECRETS_DIR/rsa_private_pkcs1.pem"
   openssl rsa -in "$SECRETS_DIR/rsa_private.pem" -pubout -out "$SECRETS_DIR/rsa_public.pem"
 fi
+# containers run as a NON-root user and mount the keys read-only, so they must be
+# world-readable or auth-server crashes with "Permission denied" on rsa_private.pem
+chmod 644 "$SECRETS_DIR"/*.pem 2>/dev/null || true
 
 # --- 5. .env from template (server IP + random secrets) ------------------
 if [ ! -f "$ENV_FILE" ]; then
